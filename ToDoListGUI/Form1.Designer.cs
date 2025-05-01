@@ -1,4 +1,7 @@
-﻿namespace ToDoListGUI
+﻿using System.Media;
+using System.Windows.Forms;
+
+namespace ToDoListGUI
 {
     partial class Form1
     {
@@ -6,6 +9,17 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        // Fields for controls (they MUST be private)
+        private System.Windows.Forms.ListBox listBoxTasks;
+        private System.Windows.Forms.Button buttonAddTask;
+        private System.Windows.Forms.Button buttonRemoveTask;
+        private System.Windows.Forms.Button buttonMarkComplete;
+        private System.Windows.Forms.Button buttonSaveTasks;
+        private System.Windows.Forms.Button buttonLoadTasks;
+        private System.Windows.Forms.TextBox textBoxInput;
+        private System.Windows.Forms.Button buttonClearCompleted;
+        private System.Windows.Forms.CheckBox buttonToggleTheme;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,100 +43,116 @@
         private void InitializeComponent()
         {
             this.listBoxTasks = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonAddTask = new System.Windows.Forms.Button();
+            this.buttonRemoveTask = new System.Windows.Forms.Button();
+            this.buttonMarkComplete = new System.Windows.Forms.Button();
+            this.buttonSaveTasks = new System.Windows.Forms.Button();
+            this.buttonLoadTasks = new System.Windows.Forms.Button();
+            this.textBoxInput = new System.Windows.Forms.TextBox();
+            this.buttonClearCompleted = new System.Windows.Forms.Button();
+            this.buttonToggleTheme = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listBoxTasks
             // 
             this.listBoxTasks.FormattingEnabled = true;
-            this.listBoxTasks.ItemHeight = 16;
-            this.listBoxTasks.Location = new System.Drawing.Point(12, 0);
+            this.listBoxTasks.Location = new System.Drawing.Point(12, 12);
             this.listBoxTasks.Name = "listBoxTasks";
-            this.listBoxTasks.Size = new System.Drawing.Size(576, 260);
+            this.listBoxTasks.Size = new System.Drawing.Size(714, 238);
             this.listBoxTasks.TabIndex = 0;
             // 
-            // button1
+            // buttonAddTask
             // 
-            this.button1.Location = new System.Drawing.Point(12, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAddTask.Location = new System.Drawing.Point(12, 300);
+            this.buttonAddTask.Name = "buttonAddTask";
+            this.buttonAddTask.Size = new System.Drawing.Size(100, 30);
+            this.buttonAddTask.TabIndex = 2;
+            this.buttonAddTask.Text = "Add";
+            this.buttonAddTask.Click += new System.EventHandler(this.ButtonAddTask_Click);
             // 
-            // button2
+            // buttonRemoveTask
             // 
-            this.button2.Location = new System.Drawing.Point(135, 312);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonRemoveTask.Location = new System.Drawing.Point(118, 300);
+            this.buttonRemoveTask.Name = "buttonRemoveTask";
+            this.buttonRemoveTask.Size = new System.Drawing.Size(100, 30);
+            this.buttonRemoveTask.TabIndex = 3;
+            this.buttonRemoveTask.Text = "Remove";
+            this.buttonRemoveTask.Click += new System.EventHandler(this.ButtonRemoveTask_Click);
             // 
-            // button3
+            // buttonMarkComplete
             // 
-            this.button3.Location = new System.Drawing.Point(259, 312);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonMarkComplete.Location = new System.Drawing.Point(224, 300);
+            this.buttonMarkComplete.Name = "buttonMarkComplete";
+            this.buttonMarkComplete.Size = new System.Drawing.Size(100, 30);
+            this.buttonMarkComplete.TabIndex = 4;
+            this.buttonMarkComplete.Text = "Complete";
+            this.buttonMarkComplete.Click += new System.EventHandler(this.ButtonMarkComplete_Click);
             // 
-            // button4
+            // buttonSaveTasks
             // 
-            this.button4.Location = new System.Drawing.Point(382, 312);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonSaveTasks.Location = new System.Drawing.Point(330, 300);
+            this.buttonSaveTasks.Name = "buttonSaveTasks";
+            this.buttonSaveTasks.Size = new System.Drawing.Size(100, 30);
+            this.buttonSaveTasks.TabIndex = 5;
+            this.buttonSaveTasks.Text = "Save";
+            this.buttonSaveTasks.Click += new System.EventHandler(this.ButtonSaveTasks_Click);
             // 
-            // button5
+            // buttonLoadTasks
             // 
-            this.button5.Location = new System.Drawing.Point(497, 312);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonLoadTasks.Location = new System.Drawing.Point(436, 300);
+            this.buttonLoadTasks.Name = "buttonLoadTasks";
+            this.buttonLoadTasks.Size = new System.Drawing.Size(100, 30);
+            this.buttonLoadTasks.TabIndex = 6;
+            this.buttonLoadTasks.Text = "Load";
+            this.buttonLoadTasks.Click += new System.EventHandler(this.ButtonLoadTasks_Click);
             // 
-            // textBox1
+            // textBoxInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 284);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(560, 22);
-            this.textBox1.TabIndex = 6;
+            this.textBoxInput.Location = new System.Drawing.Point(12, 265);
+            this.textBoxInput.Name = "textBoxInput";
+            this.textBoxInput.Size = new System.Drawing.Size(714, 20);
+            this.textBoxInput.TabIndex = 1;
+            // 
+            // buttonClearCompleted
+            // 
+            this.buttonClearCompleted.Location = new System.Drawing.Point(542, 300);
+            this.buttonClearCompleted.Name = "buttonClearCompleted";
+            this.buttonClearCompleted.Size = new System.Drawing.Size(100, 29);
+            this.buttonClearCompleted.TabIndex = 7;
+            this.buttonClearCompleted.Text = "Clear Completed";
+            this.buttonClearCompleted.UseVisualStyleBackColor = true;
+            this.buttonClearCompleted.Click += new System.EventHandler(this.ButtonClearCompleted_Click);
+            // 
+            // buttonToggleTheme
+            // 
+            this.buttonToggleTheme.AutoSize = true;
+            this.buttonToggleTheme.Location = new System.Drawing.Point(646, 307);
+            this.buttonToggleTheme.Name = "buttonToggleTheme";
+            this.buttonToggleTheme.Size = new System.Drawing.Size(79, 17);
+            this.buttonToggleTheme.TabIndex = 8;
+            this.buttonToggleTheme.Text = "Dark Mode";
+            this.buttonToggleTheme.UseVisualStyleBackColor = true;
+            this.buttonToggleTheme.CheckedChanged += new System.EventHandler(this.ButtonToggleTheme_CheckedChanged);
+
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(600, 347);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(738, 341);
+            this.Controls.Add(this.buttonToggleTheme);
+            this.Controls.Add(this.buttonClearCompleted);
+            this.Controls.Add(this.textBoxInput);
             this.Controls.Add(this.listBoxTasks);
+            this.Controls.Add(this.buttonAddTask);
+            this.Controls.Add(this.buttonRemoveTask);
+            this.Controls.Add(this.buttonMarkComplete);
+            this.Controls.Add(this.buttonSaveTasks);
+            this.Controls.Add(this.buttonLoadTasks);
             this.Name = "Form1";
+            this.Text = "To-Do List";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        #endregion
-
-        private System.Windows.Forms.ListBox listBoxTasks;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
-
+#endregion
