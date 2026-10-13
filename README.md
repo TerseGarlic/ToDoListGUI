@@ -4,17 +4,17 @@ A simple, clean Windows Forms-based To-Do List desktop app written in C#. Includ
 
 Features
 
-✅ Add Tasks with description, priority (High/Medium/Low), and optional due date.
+Add Tasks with description, priority (High/Medium/Low), and optional due date.
 
-⬜ Mark as Complete
+Mark as Complete
 
-❌ Remove Tasks
+Remove Tasks
 
-🔄 Save/Load Tasks (locally as tasks.txt)
+Save/Load Tasks (locally as tasks.txt)
 
-🌚 Dark Mode Toggle
+Dark Mode Toggle
 
-🔍 Double-Click a Task to view details in a popup
+Double-Click a Task to view details in a popup
 
 How to Use
 
@@ -38,20 +38,12 @@ Build & run
 
 Roadmap (Planned Features)
 
-
-
 Screenshots
 
 ![image](https://github.com/user-attachments/assets/ad5b8f3d-4e3d-4809-ad09-c1168f3d2e4a)
 ![image](https://github.com/user-attachments/assets/c04f8a89-ccfa-4585-8c9e-ecc7b768f0b6)
 ![image](https://github.com/user-attachments/assets/5980d7bd-3225-4a20-a206-864c20d1af20)
 ![image](https://github.com/user-attachments/assets/fb2c5548-1ce4-496c-b8d9-c5d03add8124)
-
-
-
-License
-
-MIT License
 
 Author
 
